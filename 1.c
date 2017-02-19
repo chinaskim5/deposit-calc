@@ -43,7 +43,7 @@ int main(){
         else
             sum*=1.15;
 	}
-	printf("%d\n",sum);
+	printf("Your input at the time of expiry= %d\n",sum);
 
 	return 0;
 }
