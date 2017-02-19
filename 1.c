@@ -19,6 +19,20 @@ int main(){
 		printf("The term does not exceed 365 days\n");
 		return 0;
 	}
+	if (sum < 100000 ) {
+          if (time < 31 && time > 0)
+            sum*=0.9;
+        else if (time < 121 && time > 30)
+            sum*=1.02;
+
+        else if (time < 241 && time > 120)
+            sum*=1.06;
+        else
+            sum*=1.12;
+
+
+	}
+	printf("%d\n",sum);
 
 	return 0;
 }
