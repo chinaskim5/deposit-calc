@@ -1,13 +1,24 @@
 #include <stdio.h>
-
+int conditions(int,int);
+int calc(int,int);
 
 int main(){
-	int sum,time;
+	int sum,time,flag=1;
 	printf("deposit Amount\n");
 	scanf("%d",&sum);
 	printf("For how long ?\n");
 	scanf("%d",&time);
-	if ( sum < 1000 && time > 365 ) {
+	flag=conditions(sum,time);
+	if (flag==0){
+        return 0;
+	}
+	sum=calc(sum,time);
+	printf("Your input at the time of expiry= %d\n",sum);
+
+	return 0;
+}
+int conditions(int sum, int time){
+if ( sum < 1000 && time > 365 ) {
 		printf("The minimum deposit amount in 1000\nThe term does not exceed 365 days\n");
 		return 0;
 	}
@@ -19,7 +30,9 @@ int main(){
 		printf("The term does not exceed 365 days\n");
 		return 0;
 	}
-	if (sum < 100000 ) {
+}
+int calc(int sum,int time){
+if (sum < 100000 ) {
           if (time < 31 && time > 0)
             sum*=0.9;
         else if (time < 121 && time > 30)
@@ -43,7 +56,5 @@ int main(){
         else
             sum*=1.15;
 	}
-	printf("Your input at the time of expiry= %d\n",sum);
-
-	return 0;
+	return sum;
 }
