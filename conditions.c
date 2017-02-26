@@ -15,4 +15,5 @@ if ( sum < 1000 && time > 365 ) {
 	printf("The term does not exceed 365 days\n");
 	return 0;
     }
+    return 1;
 }
